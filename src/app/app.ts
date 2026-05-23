@@ -1,12 +1,12 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { BookList } from './components/book-list/book-list';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [BookList],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('STIWK2124-A2-Group8');
+  protected title = 'STIWK2124-A2-Group8';
 }
