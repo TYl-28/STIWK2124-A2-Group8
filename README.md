@@ -1,59 +1,110 @@
-# STIWK2124A2Group8
+# STIWK2124-A2-Group8 - Accessible Reading List Angular Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.5.
+## Project Overview
 
-## Development server
+This project is an Angular frontend application developed for STIWK2124 Assignment 2.
 
-To start a local development server, run:
+The system connects to the Spring Boot backend API from Assignment 1 and allows users to manage an Accessible Reading List. Users can view, search, add, edit, and delete book records through a web-based interface.
 
-```bash
-ng serve
-```
+## Technologies Used
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Angular
+- TypeScript
+- HTML
+- CSS
+- Spring Boot Backend API
+- MySQL Database
+- Git and GitHub
 
-## Code scaffolding
+## Backend API
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Backend API URL:
 
-```bash
-ng generate component component-name
-```
+http://localhost:8081/api/books
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Backend test URL:
 
-```bash
-ng generate --help
-```
+http://localhost:8081/api/books?page=0&size=5
 
-## Building
+## Frontend URL
 
-To build the project run:
+The Angular frontend runs at:
 
-```bash
-ng build
-```
+http://localhost:4201
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Authentication
 
-## Running unit tests
+The backend uses Basic Authentication for protected API operations.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Username: group8  
+Password: 1234
 
-```bash
-ng test
-```
+The Angular frontend sends the Basic Auth header for create, update, and delete operations.
 
-## Running end-to-end tests
+## Features
 
-For end-to-end (e2e) testing, run:
+1. View book list from backend API
+2. Search books by title, author, or category
+3. Pagination with Previous and Next buttons
+4. Add new book
+5. Edit existing book
+6. Delete book with confirmation
+7. Form validation for required fields:
+   - Title
+   - Author
+   - Category
+   - Description
 
-```bash
-ng e2e
-```
+## How to Run the Project
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### Step 1: Start Backend
 
-## Additional Resources
+Open the backend project folder:
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+STIWK2124-A1-Group8
+
+Run:
+
+.\mvnw.cmd spring-boot:run
+
+Make sure the backend is running on:
+
+http://localhost:8081
+
+### Step 2: Start Angular Frontend
+
+Open the frontend project folder:
+
+STIWK2124-A2-Group8
+
+Install dependencies if needed:
+
+npm install
+
+Run Angular frontend:
+
+ng serve --port 4201
+
+Open browser:
+
+http://localhost:4201
+
+## Project Structure
+
+src/app/
+- components/
+  - book-form/
+  - book-list/
+- models/
+  - book.ts
+- services/
+  - book.ts
+- app.config.ts
+- app.html
+- app.ts
+
+## Notes
+
+- The backend must be running before using the Angular frontend.
+- CORS has been configured in the backend to allow Angular frontend access.
+- The frontend was tested using http://localhost:4201.
